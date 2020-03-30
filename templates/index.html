@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>PREDICT CORONAVIRUS</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Coronavirus</h1>
+	<h3>Male = 1, Female = 0</h3>
+	<h3>Fever in Fahrenheit Degree</h3>
+	<h3>Yes = 1, No = 0<h3>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="age" placeholder="Age" required="required" />
+        <input type="text" name="gender" placeholder="Gender" required="required" />
+		<input type="text" name="fever" placeholder="Fever" required="required" />
+		<input type="text" name="d" placeholder="Taken Any Medicine?" required="required" />
+		<input type="text" name="e" placeholder="Dry Cough" required="required" />
+		<input type="text" name="f" placeholder="Fatigue" required="required" />
+		<input type="text" name="g" placeholder="Sputum Production" required="required" />
+		<input type="text" name="h" placeholder="Shortness of Breath" required="required" />
+		<input type="text" name="i" placeholder="Any type of Shortness of Breath Disease" required="required" />
+		<input type="text" name="j" placeholder="Pain (muscular, chest, abdominal, joint, etc.)" required="required" />
+		<input type="text" name="k" placeholder="Sore throat" required="required" />
+		<input type="text" name="l" placeholder="Headache" required="required" />
+		<input type="text" name="m" placeholder="Chills" required="required" />
+		<input type="text" name="n" placeholder="Nausea Or Vomiting" required="required" />
+		<input type="text" name="o" placeholder="Nasal Congestion" required="required" />
+		<input type="text" name="q" placeholder=" Diarrhoea" required="required" />
+		<input type="text" name="r" placeholder="Past Disease" required="required" />
+		<input type="text" name="s" placeholder="TRAVEL DETAILS last 14th day" required="required" />
+		<input type="text" name="t" placeholder="COVID-19 Contamination Last 14 day" required="required" />
+		
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
